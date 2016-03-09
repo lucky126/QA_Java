@@ -1,0 +1,147 @@
+﻿<style>
+    .modal-dialog {
+        margin-top: 200px;
+    }
+
+    .header {
+        background: none;
+        line-height: 50px;
+        font-size: large;
+    }
+
+        .header div {
+            border-right: 1px solid #ccc;
+            background: #ccc;
+        }
+
+            .header div:last-child {
+                border-right: none;
+            }
+
+            .header div.active {
+                background: white;
+            }
+
+    .body {
+        padding: 30px 15px;
+    }
+
+    .footer {
+        text-align: right;
+        padding: 10px 30px;
+    }
+</style>
+
+<div class="row header text-center">
+    <div class="col-sm-6" ng-class="{active: firstStep}" ng-init="firstStep=true">
+        第一步：设置网考服务器
+    </div>
+    <div class="col-sm-6" ng-class="{active: !firstStep}">
+        第二步：设置考点信息
+    </div>
+</div>
+
+<div class="body">
+    <form class="form-horizontal" id="configForm" ng-show="firstForm" ng-init="firstForm=true">
+        <div class="form-group">
+            <label class="control-label col-sm-4 text-right" for="ServerUrl">网考服务地址：</label>
+
+            <div class="col-sm-6">
+                <input class="form-control" type="text" id="ServerUrl" name="ServerUrl" ng-model="serverUrl" placeholder="请输入网考服务地址" ng-change="resetTest();" ng-disabled="loadingState" />
+            </div>
+
+            <label class="control-label" for="ServerUrl" style="background: #ccc; padding: 5px; border-radius: 5px;" ng-show="false">
+                <a href="javascript:void();" ng-disabled="loadingState" ng-click="connectTest()" ng-init="linkText='测试连接'" style="color: rgb(77, 76, 76);">
+                    <i class="fa fa-check fa-lg text-success" ng-show="connSuccess" ng-init="connSuccess=false"></i>
+                    {{linkText}}
+                </a>
+            </label>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-8 col-sm-offset-4">
+                <h5>
+                    <small>用于和中央服务器数据交互，由机考项目组提供。</small>
+                </h5>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4 text-right" for="ValidateCode">网考服务验证码：</label>
+
+            <div class="col-sm-6">
+                <input class="form-control" id="ValidateCode" name="ValidateCode" ng-model="validateCode" placeholder="请输入网考服务验证码" />
+            </div>
+        </div>
+    </form>
+
+    <form class="form-horizontal" id="setPwdForm" ng-hide="firstForm">
+        <div class="form-group">
+            <label class="control-label col-sm-4 text-right">网考组织方：</label>
+
+            <div class="col-sm-8 text-left">
+                <label class="control-label">{{app.AppName}}</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4 text-right">考点代码：</label>
+
+            <div class="col-sm-8 text-left">
+                <label class="control-label">{{site.ExamSiteCode}}</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4 text-right">考点名称：</label>
+
+            <div class="col-sm-8 text-left">
+                <label class="control-label">{{site.ExamSiteName}}</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4 text-right" for="ExamSitePwd">设置密码：</label>
+
+            <div class="col-sm-8">
+                <input class="form-control width-fiexd-200" type="text" id="ExamSitePwd" name="Password" ng-model="site.SitePwd" placeholder="请设置密码" maxlength="20" ng-disabled="loadingState" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row footer">
+    <button id="btnSave" type="button" class="btn btn-turquoise" ng-click="save();" ng-disabled="loadingState" ng-init="submitText='下一步'">
+        <i class="fa fa-save" ng-hide="loadingState"></i>
+        <i class="fa fa-spinner fa-spin" ng-show="loadingState"></i>
+        <span>{{submitText}}</span>
+    </button>
+    <button id="btnClose" type="button" class="btn btn-gray" ng-click="close();" ng-disabled="loadingState">
+        <i class="fa fa-close"></i>
+        <span>关闭</span>
+    </button>
+</div>
+
+<script>
+    $(function () {
+        $('form#configForm').validate({
+            rules: {
+                ServerUrl: { required: true, isURL: true },
+                ValidateCode: { required: true }
+            },
+            messages: {
+                ServerUrl: { required: '请输入网考服务地址！' },
+                ValidateCode: { required: '请输入网考服务验证码！' }
+            }
+        });
+
+        $('form#setPwdForm').validate({
+            rules: {
+                Password: { required: true, minlength: 5, maxlength: 20 }
+            },
+            messages: {
+                Password: { required: '请设置考点密码！', minlength: '最小设置5位字符密码！', maxlength: '最大设置20位字符密码！' }
+            }
+        });
+    });
+</script>

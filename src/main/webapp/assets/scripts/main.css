@@ -1,0 +1,136 @@
+﻿/*公用样式 start */
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0 auto;
+    margin: 0 auto;
+    background: #EEEFF1;
+    color: #8a8989;
+    /*font-family: Microsoft YaHei, SimSun, Arial, 微软雅黑;*/
+    font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+body{
+    overflow-y:scroll;
+}
+.list-group{
+    padding-left:0;
+    margin-bottom:0;
+}
+a{outline:none;}
+a:active{noOutline:expression_r(this.onFocus=this.blur());}
+a:focus{outline:0;}
+/*.container{
+    padding:0 auto;
+    margin:0 auto;
+    text-align: center;
+    background-color: #EAEBEE;
+}*/
+.header, .content, .footerAD, .footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+/* 公用样式 end */
+
+/*header样式 start*/
+.header {
+    background-color: #259cc9;
+    height: 75px;
+}
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+.header .top-menu {
+    color: #fff;
+    display: block;
+}
+.header .userinfo-dropdown-btn {
+    font-size: 14px;
+    color: #FFF;
+    background: none;
+    border: none
+}
+.header .userinfo-head-img {
+    height: 35px;
+    width: 35px;
+    text-align: right;
+}
+.header .platform {
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 23px;
+    border-radius: 20px;
+    background-color: #1F7FAB;
+}
+.header .userinfo-dropdown {
+}
+
+/*header样式 end*/
+
+
+
+
+
+/*content-block样式 start*/
+.content-block {
+    background-color:#fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 680px;    /*margin:0px -5px 0px -5px;*/
+}
+
+/*content-block样式 end*/
+
+/*个人设置样式 start*/
+.user-config-left {
+    padding: 0px;
+    padding-right: 10px;
+}
+.user-config-left .list-group-item {
+    padding-left: 30%;
+    border: 0px;
+    line-height: 45px;
+    height: 45px;
+}
+
+
+/*个人设置样式 end*/
+
+
+
+
+/*新增头部padding替换line-height*/
+.head-pd-t12 {
+    padding-top: 12px;
+}
+.head-pd-t22 {
+    padding-top: 22px;
+}
+.head-pd-r22 {
+    padding-right: 22px;
+}
+
+
+/*右侧标题*/
+.course-design-box {
+    padding: 10px 20px;
+}
+
+/*a标签悬停去除下划线*/
+a:hover {
+    text-decoration: none;
+}
+a:focus {
+    text-decoration: none;
+}
+
+/*返回顶部样式 end*/
+.top-notice-box{background:#F2F6F7;position:relative;margin:10px 40px 0 20px;}
+.top-notice-icon{width:17px;height:14px;background:url("../images/common/notice-icon.jpg") no-repeat;display:block;position:absolute;left:0px;top:0px;}
+.top-notice-count{width:17px;height:15px;background:#DD5C01;border-radius:40%;color:#fff;font-size:10px;font-family:Arial;text-align:center;line-height:15px;font-style:normal;display:inline-block;position:absolute;right:-6px;top:-10px;}

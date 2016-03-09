@@ -1,0 +1,45 @@
+﻿body{font-size: 14px; font-family: "微软雅黑"}
+.panel .panel-body{color: black;}
+.login-page{color: black;}
+.error{color: red !important; border-color: red;}
+.nav.nav-tabs > li.active > a{color: orange;}
+.modal-dialog{margin-top: 120px;}
+.width-fiexd-100{width: 100px}
+.width-fiexd-150{width: 150px}
+.width-fiexd-200{width: 200px}
+.width-full{width: 100%}
+.input-inline{display: inline; margin-right: 10px;}
+.tag-hide{display: none;}
+/* bootstrap-notify 透明度 */
+/*.alert{filter: alpha(opacity=80); -moz-opacity: 0.8; -khtml-opacity: 0.8; opacity: 0.8;}*/
+/* 左侧菜单 */
+.page-body.skin-turquoise .sidebar-menu{background-color: #16BEB1;}
+/* 主要操作按钮 */
+.btn.btn-turquoise{background-color: #16BEB1;}
+.btn.btn-turquoise:hover{background-color: #17b5a9;}
+/* 计划连接 */
+.planLink{color: #17b5a9; cursor: pointer; font-weight: normal; font-size: 18px; margin:10px 0;}
+.planLink:hover{color: orange;}
+/* 计划明细 */
+.planDetail{color: #606060;}
+/* 计划标签 */
+.planTabs span{color: #ccc; cursor: pointer; padding: 12px; margin-right: 12px;}
+.planTabs span:hover{color: #969696;}
+.planTabs span.active{color: #16BEB1; border-bottom: 3px solid #16BEB1;}
+.planTabs span.active:hover{color: #16BEB1;}
+/* 搜索栏最大宽度 */
+.selectMaxWidth{ max-width: 120px;}
+.photoImg {
+    /* 普通一寸 */
+    /*width: 150px;
+    height: 220px;*/
+    /* 小二寸 */
+    width: 5.5cm;
+    height: 7.5cm;
+}
+.padding-empty{ padding: 0 !important;}
+.margin-empty{ margin: 0;}
+.breadcrumb-color{ color: #979898;}
+.breadcrumb-link{ color: #337AC4 !important;}
+.watermark {background: url(../images/watermark_tilt.jpg) 60% 8% no-repeat;}
+.sidebar-menu .logo-env{ padding: 18px;}

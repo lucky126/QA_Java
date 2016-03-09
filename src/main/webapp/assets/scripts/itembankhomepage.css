@@ -1,0 +1,91 @@
+﻿
+.examtab {
+    background-color: White;
+    margin-bottom: 1em;
+    width: 100%;
+}
+.examtab tr td, .examtab th {
+    font-size: 14px;
+    height: 50px;
+	padding-left: 15px;
+    padding-right: 15px;
+}
+.examtab th {
+    background-color: #edf2f6;
+    color: #212a45;
+    text-align: left;
+}
+.examtab td, th {
+    border: 1px solid #ddd;
+    padding: 0;
+}
+
+.top-mail-icon{width:17px;height:14px;background:url("../../asset/images/common/notice-icon.jpg") no-repeat;display:block;position:absolute;left:0px;top:0px;}
+.img-head {
+    float: right;
+    height: 53px;
+    overflow: visible;
+    padding-right: 30px;
+	color:#FFFFFF;
+}
+.img-head-a{
+	height:35px;
+	text-align:right;
+	width:35px;
+	border-radius:50%;
+}
+.head-pd-t20 {
+    padding-top: 20px;
+}
+.left-menu-hed {
+    cursor: pointer;
+    padding: 15px 0 15px 17%;
+}
+.mtb15 {
+    margin: 15px 0;
+}
+.selected{
+	background-color: #f5f5f5;
+    color: #00CCFF !important;
+    text-decoration: none;
+}	
+.span-selected{
+    color: #00CCFF !important;;
+}
+.head-title{
+	font-size:20px;
+	color:#FFFFFF;
+	margin-left:10px
+}
+.contant-div{
+	padding-bottom: 45px;
+	padding-top: 13px;
+	padding-left: 15px;
+}
+.img-menu-left{
+	width:23px;
+	height:23px;
+	margin-right:5px;
+}
+.span-menu-font{
+	font-size:16px
+}
+.div-list-head{
+	line-height: 48px;
+	padding-left: 12px;
+}
+.img-view-top{
+	margin-bottom:6px
+}
+.span-view-font{
+	font-size:18px
+}
+.back-color{
+	color:#00CCFF
+}
+.select-padding{
+	padding: 6px;
+}
+.img-search-margin{
+	margin-bottom:6px
+}
