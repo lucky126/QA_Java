@@ -4,8 +4,12 @@ import com.lucky.model.BoardEntity;
 import com.lucky.repository.BoardRepository;
 import com.lucky.service.IBoardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jca.cci.core.InteractionCallback;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 /**
@@ -17,10 +21,23 @@ public class BoardService implements IBoardService {
     @Autowired
     private BoardRepository boardRepository;
 
-    public List<BoardEntity> getBoard()
+    @PersistenceContext
+    private EntityManager em;
+
+    public List<BoardEntity> getParentBoards(boolean isLgoin)
     {
-        List<BoardEntity> list = boardRepository.findAll();
+        List<BoardEntity> list;
+
+        if(isLgoin)
+            list = boardRepository.GetParentBoards();
+        else
+            list = boardRepository.GetParentPublicBoards();
 
         return list;
+    }
+
+    public List<BoardEntity> getBoardsByParentID(Integer id)
+    {
+        return  boardRepository.GetBoardsByParentID(id);
     }
 }

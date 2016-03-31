@@ -3,6 +3,7 @@ package com.lucky.controller;
 import com.lucky.model.BoardEntity;
 import com.lucky.service.Impl.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,19 +18,21 @@ public class BoardController extends BaseController {
     private BoardService boardService;
 
     // 首页
-    @RequestMapping(value = "/board/{id}", method = RequestMethod.GET)
-    public @ResponseBody List<BoardEntity> getBoard(@RequestBody @PathVariable("id") int id) {
+    @RequestMapping(value = "/board/", method = RequestMethod.GET)
+    public @ResponseBody List<BoardEntity> getParentBoards() {
 
-        List<BoardEntity> list = boardService.getBoard();
+        List<BoardEntity> list = boardService.getParentBoards(false);
 
         return list;
     }
-/*
+
     // 版区列表
     @RequestMapping(value = "/board/{bid}", method = RequestMethod.GET)
-    public String board(@PathVariable("bid") Integer bid, ModelMap modelMap){
+    public @ResponseBody List<BoardEntity> getBoards(@RequestBody @PathVariable("bid") Integer bid){
 
-        return "board";
+        List<BoardEntity> list = boardService.getBoardsByParentID(bid);
+
+        return list;
     }
-*/
+
 }

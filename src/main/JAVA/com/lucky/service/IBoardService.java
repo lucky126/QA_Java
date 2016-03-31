@@ -10,5 +10,7 @@ import java.util.List;
 
 public interface IBoardService {
 
-    public List<BoardEntity> getBoard();
+    public List<BoardEntity> getParentBoards(boolean isLogin);
+
+    public List<BoardEntity> getBoardsByParentID(Integer id);
 }
